@@ -6,9 +6,9 @@ use Livewire\Volt\Volt;
 use App\Http\Controllers\PostController;
 
 
-Route::get('/posts', [PostController::class, 'index']);
-Route::get('/posts/create', [PostController::class, 'create'])->middleware('auth');
-Route::post('/posts', [PostController::class, 'store'])->middleware('auth');
+Route::get('posts', [PostController::class, 'index'])->name('posts');
+Route::get('posts/create', [PostController::class, 'create'])->middleware('auth')->name('create');
+Route::post('posts', [PostController::class, 'store'])->middleware('auth');
 
 
 Route::get('/', function () {

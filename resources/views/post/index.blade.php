@@ -12,7 +12,12 @@
                     <p>Posts:</p>
                 </div>
                 @foreach ($posts as $post)
-                    <p>Post : {{ $post->title.",\n".$post->content }}</p>
+                    <div class="bg-gray-800 text-white rounded p-4 mb-4">
+                        <h3 class="text-xl font-bold">{{ $post->title }}</h3>
+                        <h6 class="text-xs">{{ $post->user->email }}</h6>
+                        </br>
+                        <p>{{ $post->content }}</p>
+                    </div>
                 @endforeach
             </div>
         </section>
